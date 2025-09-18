@@ -1,0 +1,116 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 210 40% 98%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 210 40% 98%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 188 60% 38%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 222 47% 14%;
+
+    --muted: 210 30% 96%;
+    --muted-foreground: 215 16% 35%;
+
+    --accent: 190 40% 95%;
+    --accent-foreground: 222 47% 14%;
+
+    --destructive: 0 76% 45%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 25% 88%;
+    --input: 210 25% 88%;
+    --ring: 188 60% 38%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 222 15% 25%;
+    --sidebar-primary: 188 60% 38%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 200 40% 96%;
+    --sidebar-accent-foreground: 222 15% 25%;
+    --sidebar-border: 210 25% 88%;
+    --sidebar-ring: 188 60% 38%;
+  }
+
+  .dark {
+    --background: 220 35% 10%;
+    --foreground: 210 40% 96%;
+
+    --card: 220 35% 10%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 220 35% 10%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 188 60% 45%;
+    --primary-foreground: 220 40% 10%;
+
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 200 35% 20%;
+    --accent-foreground: 210 40% 96%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 210 40% 96%;
+
+    --border: 215 20% 24%;
+    --input: 215 20% 24%;
+    --ring: 188 60% 45%;
+
+    --sidebar-background: 220 35% 12%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 188 60% 45%;
+    --sidebar-primary-foreground: 220 40% 12%;
+    --sidebar-accent: 215 25% 18%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 215 20% 24%;
+    --sidebar-ring: 188 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Minimal styles for react-day-picker to render properly */
+  .rdp { --rdp-cell-size: 2.25rem; }
+  .rdp-compact { --rdp-cell-size: 2rem; }
+  .rdp-months { @apply flex flex-col sm:flex-row gap-2; }
+  .rdp-month { @apply space-y-1; }
+  .rdp-caption { @apply flex items-center justify-center relative mb-1; }
+  .rdp-table { @apply w-full border-collapse; }
+  .rdp-head_row, .rdp-row { @apply flex w-full; }
+  .rdp-head_cell { @apply w-8 h-8 grid place-items-center text-muted-foreground text-[0.7rem]; }
+  .rdp-cell { @apply w-8 h-8 grid place-items-center; }
+}
